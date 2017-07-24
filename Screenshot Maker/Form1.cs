@@ -15,7 +15,7 @@ namespace Screenshot_Maker
     {
         public static int ticks = 1;
 
-        int period = 1;
+        int period = 300;
         string path = "C:\\scrcapture";
         TickingTimer timer = new TickingTimer(1000, "C:\\scrcapture");
 
@@ -26,9 +26,9 @@ namespace Screenshot_Maker
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            StatusTextBox.Text = "off";
             PeriodTextBox.Text = period.ToString();
             LocationTextBox.Text = path;
+            Start_Click(null, null);
         }
 
         private void SetStatusOff()

@@ -35,7 +35,8 @@ namespace Screenshot_Maker
                 var m = new MemoryStream();
                 bmpScreenCapture.Save(m, ImageFormat.Jpeg);
                 var img = Image.FromStream(m);
-                img.Save(_path + "\\" + Form1.ticks + ".jpg");
+                img.Save(_path + "\\" + DateTime.Now.Month.ToString() + "." + DateTime.Now.Day.ToString() 
+                    + " " + DateTime.Now.Hour.ToString() + ";" + DateTime.Now.Minute.ToString() + ".jpg");
                 Form1.ticks++;
             }
         }
