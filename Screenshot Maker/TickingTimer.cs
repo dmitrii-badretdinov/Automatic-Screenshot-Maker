@@ -17,7 +17,12 @@ namespace Screenshot_Maker
         public TickingTimer(double interval, string path)
             : base(interval)
         {
-            _path = path;   
+            _path = path;
+
+            if (!Directory.Exists(_path))
+            {
+                Directory.CreateDirectory(_path);
+            }
         }
 
         public static void t_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
